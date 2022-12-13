@@ -8,26 +8,33 @@ import 'package:flutter/material.dart'
         BorderSide,
         IconThemeData,
         BorderStyle,
-        TextStyle;
+        TextStyle,
+        AppBarTheme,
+        EdgeInsets;
 import 'package:google_fonts/google_fonts.dart';
 
 final lightTheme = ThemeData(
+  appBarTheme: const AppBarTheme(
+    color: DeliveryColors.white,
+    elevation: 0,
+  ),
   canvasColor: DeliveryColors.white,
+  accentColor: DeliveryColors.purple,
   textTheme: GoogleFonts.poppinsTextTheme().apply(
     bodyColor: DeliveryColors.purple,
     displayColor: DeliveryColors.purple,
   ),
-  accentColor: DeliveryColors.purple,
   inputDecorationTheme: InputDecorationTheme(
     border: _border,
     enabledBorder: _border,
     focusedBorder: _border,
+    labelStyle: const TextStyle(
+      color: DeliveryColors.purple,
+    ),
+    contentPadding: EdgeInsets.zero,
     hintStyle: GoogleFonts.poppins(
       color: DeliveryColors.lightgrey,
       fontSize: 10,
-    ),
-    labelStyle: const TextStyle(
-      color: DeliveryColors.white,
     ),
   ),
   iconTheme: const IconThemeData(
@@ -37,6 +44,10 @@ final lightTheme = ThemeData(
 );
 
 final darkTheme = ThemeData(
+  appBarTheme: const AppBarTheme(
+    color: DeliveryColors.purple,
+    elevation: 0,
+  ),
   textTheme: GoogleFonts.poppinsTextTheme().apply(
     bodyColor: DeliveryColors.green,
     displayColor: DeliveryColors.green,
@@ -48,6 +59,7 @@ final darkTheme = ThemeData(
     border: _borderDark,
     enabledBorder: _borderDark,
     focusedBorder: _borderDark,
+    contentPadding: EdgeInsets.zero,
     fillColor: DeliveryColors.grey,
     filled: true,
     hintStyle: GoogleFonts.poppins(
@@ -55,7 +67,7 @@ final darkTheme = ThemeData(
       fontSize: 10,
     ),
     labelStyle: const TextStyle(
-      color: DeliveryColors.purple,
+      color: DeliveryColors.white,
     ),
   ),
   iconTheme: const IconThemeData(

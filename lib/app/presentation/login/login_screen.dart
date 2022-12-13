@@ -1,4 +1,5 @@
 import 'package:delivery_app_clean_architecture/app/presentation/colors.dart';
+import 'package:delivery_app_clean_architecture/app/presentation/home/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -103,7 +104,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(
-                      height: 10,
+                      height: 20,
                     ),
                     Text(
                       'Password',
@@ -132,26 +133,35 @@ class LoginScreen extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.all(25),
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                gradient: LinearGradient(
-                  begin: Alignment.centerRight,
-                  end: Alignment.centerLeft,
-                  colors: DeliveryColors.deliveryGradient,
-                ),
-              ),
-              child: const Padding(
-                padding: EdgeInsets.all(14),
-                child: Text(
-                  'Login',
-                  style: TextStyle(
-                    color: Colors.white,
+            child: InkWell(
+              onTap: () {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (_) => HomeScreen(),
                   ),
-                  textAlign: TextAlign.center,
+                );
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  gradient: LinearGradient(
+                    begin: Alignment.centerRight,
+                    end: Alignment.centerLeft,
+                    colors: DeliveryColors.deliveryGradient,
+                  ),
                 ),
+                child: const Padding(
+                  padding: EdgeInsets.all(14),
+                  child: Text(
+                    'Login',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                // height: 20,
               ),
-              // height: 20,
             ),
           )
         ],

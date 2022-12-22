@@ -47,6 +47,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 padding: const EdgeInsets.all(12),
                 child: Icon(
                   Icons.person,
+                  // ignore: deprecated_member_use
                   color: Theme.of(context).accentColor,
                   size: 50,
                 ),

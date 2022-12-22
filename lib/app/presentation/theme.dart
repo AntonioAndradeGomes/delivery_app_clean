@@ -1,29 +1,39 @@
 import 'package:delivery_app_clean_architecture/app/presentation/colors.dart';
-import 'package:flutter/material.dart'
-    show
-        ThemeData,
-        InputDecorationTheme,
-        OutlineInputBorder,
-        BorderRadius,
-        BorderSide,
-        IconThemeData,
-        BorderStyle,
-        TextStyle,
-        AppBarTheme,
-        EdgeInsets;
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 final lightTheme = ThemeData(
-  appBarTheme: const AppBarTheme(
+  appBarTheme: AppBarTheme(
     color: DeliveryColors.white,
-    elevation: 0,
+    centerTitle: true,
+    toolbarTextStyle: GoogleFonts.poppinsTextTheme()
+        .copyWith(
+          headline6: const TextStyle(
+            fontSize: 20,
+            color: DeliveryColors.purple,
+            fontWeight: FontWeight.bold,
+          ),
+        )
+        .bodyText2,
+    titleTextStyle: GoogleFonts.poppinsTextTheme()
+        .copyWith(
+          headline6: const TextStyle(
+            fontSize: 20,
+            color: DeliveryColors.purple,
+            fontWeight: FontWeight.bold,
+          ),
+        )
+        .headline6,
   ),
+
   canvasColor: DeliveryColors.white,
+  // ignore: deprecated_member_use
   accentColor: DeliveryColors.purple,
   textTheme: GoogleFonts.poppinsTextTheme().apply(
     bodyColor: DeliveryColors.purple,
     displayColor: DeliveryColors.purple,
   ),
+  bottomAppBarColor: DeliveryColors.verylightgrey,
   inputDecorationTheme: InputDecorationTheme(
     border: _border,
     enabledBorder: _border,
@@ -44,14 +54,34 @@ final lightTheme = ThemeData(
 );
 
 final darkTheme = ThemeData(
-  appBarTheme: const AppBarTheme(
+  appBarTheme: AppBarTheme(
     color: DeliveryColors.purple,
-    elevation: 0,
+    centerTitle: true,
+    toolbarTextStyle: GoogleFonts.poppinsTextTheme()
+        .copyWith(
+          headline6: const TextStyle(
+            fontSize: 20,
+            color: DeliveryColors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        )
+        .bodyText2,
+    titleTextStyle: GoogleFonts.poppinsTextTheme()
+        .copyWith(
+          headline6: const TextStyle(
+            fontSize: 20,
+            color: DeliveryColors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        )
+        .headline6,
   ),
   textTheme: GoogleFonts.poppinsTextTheme().apply(
     bodyColor: DeliveryColors.green,
     displayColor: DeliveryColors.green,
   ),
+  bottomAppBarColor: Colors.transparent,
+  // ignore: deprecated_member_use
   accentColor: DeliveryColors.white,
   canvasColor: DeliveryColors.grey,
   scaffoldBackgroundColor: DeliveryColors.dark,

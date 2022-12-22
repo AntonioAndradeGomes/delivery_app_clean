@@ -50,6 +50,7 @@ class LoginScreen extends StatelessWidget {
                       child: Icon(
                         size: 50,
                         Icons.person,
+                        // ignore: deprecated_member_use
                         color: Theme.of(context).accentColor,
                       ),
                     ),
@@ -137,7 +138,7 @@ class LoginScreen extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(
-                    builder: (_) => HomeScreen(),
+                    builder: (_) => const HomeScreen(),
                   ),
                 );
               },

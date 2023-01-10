@@ -1,4 +1,5 @@
 import 'package:delivery_app_clean_architecture/app/presentation/colors.dart';
+import 'package:delivery_app_clean_architecture/app/presentation/home/cart/cart_screen.dart';
 import 'package:delivery_app_clean_architecture/app/presentation/home/products/products_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -28,10 +29,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     'selectedIndex1: $currentIndex',
                   ),
                 ),
-                Center(
-                  child: Text(
-                    'selectedIndex2: $currentIndex',
-                  ),
+                CartScreen(
+                  onShopping: () {
+                    setState(() {
+                      currentIndex = 0;
+                    });
+                  },
                 ),
                 Center(
                   child: Text(
@@ -86,27 +89,31 @@ class _DeliveryNavigationBar extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Material(
-                child: IconButton(
-                  onPressed: () => onIndexSelected(0),
-                  icon: Icon(
-                    Icons.home,
-                    color: index == 0
-                        ? DeliveryColors.green
-                        : DeliveryColors.lightgrey,
-                    size: 35,
+              ClipOval(
+                child: Material(
+                  child: IconButton(
+                    onPressed: () => onIndexSelected(0),
+                    icon: Icon(
+                      Icons.home,
+                      color: index == 0
+                          ? DeliveryColors.green
+                          : DeliveryColors.lightgrey,
+                      size: 35,
+                    ),
                   ),
                 ),
               ),
-              Material(
-                child: IconButton(
-                  onPressed: () => onIndexSelected(1),
-                  icon: Icon(
-                    Icons.store,
-                    color: index == 1
-                        ? DeliveryColors.green
-                        : DeliveryColors.lightgrey,
-                    size: 35,
+              ClipOval(
+                child: Material(
+                  child: IconButton(
+                    onPressed: () => onIndexSelected(1),
+                    icon: Icon(
+                      Icons.store,
+                      color: index == 1
+                          ? DeliveryColors.green
+                          : DeliveryColors.lightgrey,
+                      size: 35,
+                    ),
                   ),
                 ),
               ),
@@ -128,15 +135,17 @@ class _DeliveryNavigationBar extends StatelessWidget {
                   ),
                 ),
               ),
-              Material(
-                child: IconButton(
-                  onPressed: () => onIndexSelected(3),
-                  icon: Icon(
-                    Icons.favorite_border,
-                    color: index == 3
-                        ? DeliveryColors.green
-                        : DeliveryColors.lightgrey,
-                    size: 35,
+              ClipOval(
+                child: Material(
+                  child: IconButton(
+                    onPressed: () => onIndexSelected(3),
+                    icon: Icon(
+                      Icons.favorite_border,
+                      color: index == 3
+                          ? DeliveryColors.green
+                          : DeliveryColors.lightgrey,
+                      size: 35,
+                    ),
                   ),
                 ),
               ),

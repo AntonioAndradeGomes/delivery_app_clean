@@ -19,4 +19,4 @@ samples, guidance on mobile development, and a full API reference.
 
 O código criado é com base nas aulas do canal [@diegoveloper](https://www.youtube.com/@diegoveloper)
 
-- [ ] [Aula 1 - construir interface](https://www.youtube.com/watch?v=BUDyX-SX1Ew&t=0s) - parei no mim 1:19:00
+- [ ] [Aula 1 - construir interface](https://www.youtube.com/watch?v=BUDyX-SX1Ew&t=0s) - parei no mim 1:44:00

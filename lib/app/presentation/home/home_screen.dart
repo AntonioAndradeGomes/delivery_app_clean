@@ -1,6 +1,7 @@
 import 'package:delivery_app_clean_architecture/app/presentation/colors.dart';
 import 'package:delivery_app_clean_architecture/app/presentation/home/cart/cart_screen.dart';
 import 'package:delivery_app_clean_architecture/app/presentation/home/products/products_screen.dart';
+import 'package:delivery_app_clean_architecture/app/presentation/home/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -41,11 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     'selectedIndex3: $currentIndex',
                   ),
                 ),
-                Center(
-                  child: Text(
-                    'selectedIndex4: $currentIndex',
-                  ),
-                ),
+                const ProfileScreen(),
               ],
             ),
           ),

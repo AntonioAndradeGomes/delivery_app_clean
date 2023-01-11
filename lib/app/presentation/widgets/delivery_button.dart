@@ -1,22 +1,26 @@
-import 'package:delivery_app_clean_architecture/app/presentation/colors.dart';
 import 'package:flutter/material.dart';
+
+import 'package:delivery_app_clean_architecture/app/presentation/colors.dart';
 
 class DeliveryButton extends StatelessWidget {
   final VoidCallback onTap;
   final String text;
   final EdgeInsets padding;
+  final double? height;
   const DeliveryButton({
-    super.key,
+    Key? key,
     required this.onTap,
     required this.text,
     required this.padding,
-  });
+    this.height,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
       child: Container(
+        height: height,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           gradient: LinearGradient(
@@ -27,12 +31,14 @@ class DeliveryButton extends StatelessWidget {
         ),
         child: Padding(
           padding: padding,
-          child: Text(
-            text,
-            style: const TextStyle(
-              color: Colors.white,
+          child: Center(
+            child: Text(
+              text,
+              style: const TextStyle(
+                color: Colors.white,
+              ),
+              textAlign: TextAlign.center,
             ),
-            textAlign: TextAlign.center,
           ),
         ),
         // height: 20,
